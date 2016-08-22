@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for YTBaseFoundation.
-FOUNDATION_EXPORT double YTBaseFoundationVersionNumber;
-
-//! Project version string for YTBaseFoundation.
-FOUNDATION_EXPORT const unsigned char YTBaseFoundationVersionString[];
+////! Project version number for YTBaseFoundation.
+//FOUNDATION_EXPORT double YTBaseFoundationVersionNumber;
+//
+////! Project version string for YTBaseFoundation.
+//FOUNDATION_EXPORT const unsigned char YTBaseFoundationVersionString[];
 
 
 
