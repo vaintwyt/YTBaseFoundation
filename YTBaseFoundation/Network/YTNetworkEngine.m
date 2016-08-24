@@ -9,62 +9,14 @@
 #import "YTNetworkEngine.h"
 #import "NSString+YTAdd.h"
 #import "NSDictionary+YTAdd.h"
+#import "YTNetworkUtil.h"
 
-@interface YTNetworkEngine () <NSURLSessionDownloadDelegate>
+@interface YTNetworkEngine ()
 
 @end
 
 
 @implementation YTNetworkEngine
-
-YTDefine_SharedInstance(YTNetworkEngine);
-
-
-+(NSMutableURLRequest*)URLRequestWithPath:(NSString*)path
-                                   method:(NSString*)method
-                                   params:(NSDictionary*)params
-                                httpHeads:(NSDictionary*)httpHeads
-                                   cookie:(NSString*)cookie
-{
-    if(![YTNetworkEngine p_checkUrlPath:path])
-    {
-        return nil;
-    }
-    
-    NSString *paramStr = [params paramString];
-    
-    NSMutableURLRequest *request = nil;
-    if([method isEqualToString:@"GET"])
-    {
-        path = [path stringByAppendingFormat:@"%@?%@",path,paramStr];
-        path = [path urlEncode];
-    }
-    else
-    {
-        request.HTTPBody = [paramStr dataUsingEncoding:NSUTF8StringEncoding];
-    }
-    request.URL = [NSURL URLWithString:path];
-    request.HTTPMethod = method;
-    
-    
-    NSArray *allHeaderKeys = [httpHeads allKeys];
-    for (NSString *headerKey in allHeaderKeys)
-    {
-        NSString *headerValue = httpHeads[headerKey];
-        if ([headerKey isKindOfClass:[NSString class]] && [headerValue isKindOfClass:[NSString class]])
-        {
-            [request setValue:headerValue forHTTPHeaderField:headerKey];
-        }
-    }
-    
-    if (cookie.length > 0)
-    {
-        [request setValue:cookie forHTTPHeaderField:@"Cookie"];
-    }
-    
-    return request;
-}
-
 
 +(NSURLSessionTask*)requestWithURLRequest:(NSURLRequest*)request
                                   success:(YTNetworkSuccess)success
@@ -98,7 +50,7 @@ YTDefine_SharedInstance(YTNetworkEngine);
                              failure:(YTNetworkFailure)failure
 
 {
-    if(![YTNetworkEngine p_checkUrlPath:path])
+    if(![YTNetworkUtil checkUrl:path])
     {
         return nil;
     }
@@ -153,33 +105,6 @@ YTDefine_SharedInstance(YTNetworkEngine);
     return task;
 }
 
-
-
-#pragma mark- NSURLSessionDownloadDelegate
--(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
-{
-    
-}
-
--(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes
-{
-    
-}
-
--(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
-{
-    
-}
-
-
-#pragma mark- private func
-+(BOOL)p_checkUrlPath:(NSString*)path
-{
-    if([path hasPrefix:@"http://"] || [path hasPrefix:@"https://"])
-        return YES;
-    
-    return NO;
-}
 
 
 @end

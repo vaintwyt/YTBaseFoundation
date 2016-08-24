@@ -31,6 +31,7 @@
 #define YTDefine_Extern_String(key) extern NSString* const k##key
 #define YTInit_Extern_String(key, value) NSString* const k##key=@""#value
 
+#define YTSharedInstance +(instancetype)sharedInstance
 #define YTDefine_SharedInstance(className) \
 \
 + (instancetype)sharedInstance { \

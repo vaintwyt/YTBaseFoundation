@@ -1,13 +1,15 @@
 //
-//  YTHttpClient.h
+//  YTNetworkUtil.h
 //  YTBaseFoundation
 //
-//  Created by vaint on 16/8/22.
+//  Created by vaintwen on 16/8/23.
 //  Copyright © 2016年 vaint. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface YTHttpClient : NSObject
+@interface YTNetworkUtil : NSObject
+
++(BOOL)checkUrl:(NSString*)url;
 
 @end

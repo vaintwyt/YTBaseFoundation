@@ -14,12 +14,6 @@ typedef void (^YTNetworkFailure)(NSURLSessionTask *task, NSError *err);
 
 @interface YTNetworkEngine : NSObject
 
-+(NSMutableURLRequest*)URLRequestWithPath:(NSString*)path
-                                   method:(NSString*)method
-                                   params:(NSDictionary*)params
-                                httpHeads:(NSDictionary*)httpHeads
-                                   cookie:(NSString*)cookie;
-
 +(NSURLSessionTask*)requestWithURLRequest:(NSURLRequest*)request
                                   success:(YTNetworkSuccess)success
                                   failure:(YTNetworkFailure)failure;

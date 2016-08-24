@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8214476B1D6BFD8600091A64 /* NSMutableURLRequest+YTAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 821447691D6BFD8600091A64 /* NSMutableURLRequest+YTAdd.h */; };
+		8214476C1D6BFD8600091A64 /* NSMutableURLRequest+YTAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 8214476A1D6BFD8600091A64 /* NSMutableURLRequest+YTAdd.m */; };
+		821447731D6C0DCE00091A64 /* YTNetworkUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 821447711D6C0DCE00091A64 /* YTNetworkUtil.h */; };
+		821447741D6C0DCE00091A64 /* YTNetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 821447721D6C0DCE00091A64 /* YTNetworkUtil.m */; };
+		821447771D6C3F8700091A64 /* YTNetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 821447751D6C3F8700091A64 /* YTNetworkManager.h */; };
+		821447781D6C3F8700091A64 /* YTNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 821447761D6C3F8700091A64 /* YTNetworkManager.m */; };
 		82EC93C21D69656800E549BF /* YTBaseFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EC93C11D69656800E549BF /* YTBaseFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82EC93CC1D69667000E549BF /* UIView+YTAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EC93CA1D69667000E549BF /* UIView+YTAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82EC93CD1D69667000E549BF /* UIView+YTAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EC93CB1D69667000E549BF /* UIView+YTAdd.m */; };
@@ -43,11 +49,15 @@
 		82EC94361D69C0DB00E549BF /* YTGCDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EC94341D69C0DB00E549BF /* YTGCDUtil.m */; };
 		82EC943E1D6B1BA600E549BF /* YTNetworkEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EC943C1D6B1BA600E549BF /* YTNetworkEngine.h */; };
 		82EC943F1D6B1BA600E549BF /* YTNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EC943D1D6B1BA600E549BF /* YTNetworkEngine.m */; };
-		82EC94421D6B1F2F00E549BF /* YTHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EC94401D6B1F2F00E549BF /* YTHttpClient.h */; };
-		82EC94431D6B1F2F00E549BF /* YTHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EC94411D6B1F2F00E549BF /* YTHttpClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		821447691D6BFD8600091A64 /* NSMutableURLRequest+YTAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+YTAdd.h"; sourceTree = "<group>"; };
+		8214476A1D6BFD8600091A64 /* NSMutableURLRequest+YTAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+YTAdd.m"; sourceTree = "<group>"; };
+		821447711D6C0DCE00091A64 /* YTNetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNetworkUtil.h; sourceTree = "<group>"; };
+		821447721D6C0DCE00091A64 /* YTNetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNetworkUtil.m; sourceTree = "<group>"; };
+		821447751D6C3F8700091A64 /* YTNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNetworkManager.h; sourceTree = "<group>"; };
+		821447761D6C3F8700091A64 /* YTNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNetworkManager.m; sourceTree = "<group>"; };
 		82EC93BE1D69656800E549BF /* YTBaseFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YTBaseFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EC93C11D69656800E549BF /* YTBaseFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTBaseFoundation.h; sourceTree = "<group>"; };
 		82EC93C31D69656800E549BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,8 +97,6 @@
 		82EC94341D69C0DB00E549BF /* YTGCDUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTGCDUtil.m; sourceTree = "<group>"; };
 		82EC943C1D6B1BA600E549BF /* YTNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNetworkEngine.h; sourceTree = "<group>"; };
 		82EC943D1D6B1BA600E549BF /* YTNetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNetworkEngine.m; sourceTree = "<group>"; };
-		82EC94401D6B1F2F00E549BF /* YTHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTHttpClient.h; sourceTree = "<group>"; };
-		82EC94411D6B1F2F00E549BF /* YTHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTHttpClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,8 +223,12 @@
 			children = (
 				82EC943C1D6B1BA600E549BF /* YTNetworkEngine.h */,
 				82EC943D1D6B1BA600E549BF /* YTNetworkEngine.m */,
-				82EC94401D6B1F2F00E549BF /* YTHttpClient.h */,
-				82EC94411D6B1F2F00E549BF /* YTHttpClient.m */,
+				821447691D6BFD8600091A64 /* NSMutableURLRequest+YTAdd.h */,
+				8214476A1D6BFD8600091A64 /* NSMutableURLRequest+YTAdd.m */,
+				821447711D6C0DCE00091A64 /* YTNetworkUtil.h */,
+				821447721D6C0DCE00091A64 /* YTNetworkUtil.m */,
+				821447751D6C3F8700091A64 /* YTNetworkManager.h */,
+				821447761D6C3F8700091A64 /* YTNetworkManager.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -229,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82EC93F11D698A5B00E549BF /* UIColor+YTAdd.h in Headers */,
+				8214476B1D6BFD8600091A64 /* NSMutableURLRequest+YTAdd.h in Headers */,
 				82EC93D11D696A3100E549BF /* UIButton+YTAdd.h in Headers */,
 				82EC94281D69C03800E549BF /* NSDate+YTAdd.h in Headers */,
 				82EC93CC1D69667000E549BF /* UIView+YTAdd.h in Headers */,
@@ -240,14 +253,15 @@
 				82EC94171D69BAD700E549BF /* GTMDefines.h in Headers */,
 				82EC94021D69B12900E549BF /* YTSystemUtil.h in Headers */,
 				82EC94061D69B48400E549BF /* OpenUDID.h in Headers */,
-				82EC94421D6B1F2F00E549BF /* YTHttpClient.h in Headers */,
 				82EC93D91D696B4400E549BF /* UILabel+YTAdd.h in Headers */,
+				821447771D6C3F8700091A64 /* YTNetworkManager.h in Headers */,
 				82EC94301D69C03800E549BF /* YTKeyChainUtil.h in Headers */,
 				82EC942E1D69C03800E549BF /* YTFileUtil.h in Headers */,
 				82EC943E1D6B1BA600E549BF /* YTNetworkEngine.h in Headers */,
 				82EC94101D69BA7D00E549BF /* YTAesUtil.h in Headers */,
 				82EC93D51D696AAF00E549BF /* UIImage+YTAdd.h in Headers */,
 				82EC93C21D69656800E549BF /* YTBaseFoundation.h in Headers */,
+				821447731D6C0DCE00091A64 /* YTNetworkUtil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8214476C1D6BFD8600091A64 /* NSMutableURLRequest+YTAdd.m in Sources */,
 				82EC93FA1D698E3600E549BF /* YTViewUtil.m in Sources */,
 				82EC94111D69BA7D00E549BF /* YTAesUtil.m in Sources */,
 				82EC93F21D698A5B00E549BF /* UIColor+YTAdd.m in Sources */,
@@ -327,9 +342,10 @@
 				82EC94031D69B12900E549BF /* YTSystemUtil.m in Sources */,
 				82EC942B1D69C03800E549BF /* NSDictionary+YTAdd.m in Sources */,
 				82EC93D61D696AAF00E549BF /* UIImage+YTAdd.m in Sources */,
-				82EC94431D6B1F2F00E549BF /* YTHttpClient.m in Sources */,
 				82EC94291D69C03800E549BF /* NSDate+YTAdd.m in Sources */,
+				821447781D6C3F8700091A64 /* YTNetworkManager.m in Sources */,
 				82EC942F1D69C03800E549BF /* YTFileUtil.m in Sources */,
+				821447741D6C0DCE00091A64 /* YTNetworkUtil.m in Sources */,
 				82EC94311D69C03800E549BF /* YTKeyChainUtil.m in Sources */,
 				82EC943F1D6B1BA600E549BF /* YTNetworkEngine.m in Sources */,
 				82EC93CD1D69667000E549BF /* UIView+YTAdd.m in Sources */,
