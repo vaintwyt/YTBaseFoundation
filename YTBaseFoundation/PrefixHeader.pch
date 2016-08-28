@@ -10,6 +10,6 @@
 #define PrefixHeader_pch
 
 #import <UIKit/UIKit.h>
-#import "YTBaseFoundation.h"
+#import "YTBaseFoundationDefine.h"
 
 #endif /* PrefixHeader_pch */
