@@ -1,0 +1,6 @@
+framework module YTBaseFoundation {
+  umbrella header "YTBaseFoundation.h"
+
+  export *
+  module * { export * }
+}

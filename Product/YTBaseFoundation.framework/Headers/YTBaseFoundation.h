@@ -14,7 +14,7 @@ FOUNDATION_EXPORT double YTBaseFoundationVersionNumber;
 //! Project version string for YTBaseFoundation.
 FOUNDATION_EXPORT const unsigned char YTBaseFoundationVersionString[];
 
-#import <YTBaseFoundation/YTBaseFoundationDefine.h>
+
 
 
 
