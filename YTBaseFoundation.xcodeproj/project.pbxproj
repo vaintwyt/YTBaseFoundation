@@ -65,6 +65,9 @@
 		82EC943F1D6B1BA600E549BF /* YTNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EC943D1D6B1BA600E549BF /* YTNetworkEngine.m */; };
 		82EC944D1D72A0C000E549BF /* YTNetworkDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EC944B1D7297AC00E549BF /* YTNetworkDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82EC944E1D72A0CD00E549BF /* YTBaseFoundationDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EC944C1D72A02D00E549BF /* YTBaseFoundationDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82EC94531D7BC4C900E549BF /* YTNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EC944F1D7BC11300E549BF /* YTNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82EC94541D7BC4CA00E549BF /* YTModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EC94521D7BC3C800E549BF /* YTModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82EC94551D7BC4CA00E549BF /* YTView.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EC94511D7BC2EF00E549BF /* YTView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +118,9 @@
 		82EC943D1D6B1BA600E549BF /* YTNetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNetworkEngine.m; sourceTree = "<group>"; };
 		82EC944B1D7297AC00E549BF /* YTNetworkDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTNetworkDefine.h; sourceTree = "<group>"; };
 		82EC944C1D72A02D00E549BF /* YTBaseFoundationDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTBaseFoundationDefine.h; sourceTree = "<group>"; };
+		82EC944F1D7BC11300E549BF /* YTNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTNetwork.h; sourceTree = "<group>"; };
+		82EC94511D7BC2EF00E549BF /* YTView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTView.h; sourceTree = "<group>"; };
+		82EC94521D7BC3C800E549BF /* YTModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTModel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,7 @@
 				82EC93F01D698A5B00E549BF /* UIColor+YTAdd.m */,
 				82EC93F71D698E3600E549BF /* YTViewUtil.h */,
 				82EC93F81D698E3600E549BF /* YTViewUtil.m */,
+				82EC94511D7BC2EF00E549BF /* YTView.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,6 +220,7 @@
 				82EC94201D69C03800E549BF /* NSDictionary+YTAdd.m */,
 				82EC94211D69C03800E549BF /* NSString+YTAdd.h */,
 				82EC94221D69C03800E549BF /* NSString+YTAdd.m */,
+				82EC94521D7BC3C800E549BF /* YTModel.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				821447751D6C3F8700091A64 /* YTNetworkManager.h */,
 				821447761D6C3F8700091A64 /* YTNetworkManager.m */,
 				82EC944B1D7297AC00E549BF /* YTNetworkDefine.h */,
+				82EC944F1D7BC11300E549BF /* YTNetwork.h */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -283,6 +292,9 @@
 				82EC93D51D696AAF00E549BF /* UIImage+YTAdd.h in Headers */,
 				82EC93C21D69656800E549BF /* YTBaseFoundation.h in Headers */,
 				82EC944D1D72A0C000E549BF /* YTNetworkDefine.h in Headers */,
+				82EC94531D7BC4C900E549BF /* YTNetwork.h in Headers */,
+				82EC94541D7BC4CA00E549BF /* YTModel.h in Headers */,
+				82EC94551D7BC4CA00E549BF /* YTView.h in Headers */,
 				82EC944E1D72A0CD00E549BF /* YTBaseFoundationDefine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,7 +377,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# workaround for bitcode generation problem with Xcode 7.3\nunset TOOLCHAINS\n\n# 生成通用库\n\nframework_name=${PROJECT_NAME}.framework\nbinary_name=${framework_name}/${PROJECT_NAME}\n\n# 生成目录\ndevice_build_dir=${SRCROOT}/build/Release-iphoneos\nsimulator_build_dir=${SRCROOT}/build/Release-iphonesimulator\n\n# 输出目录\noutput_dir=${SRCROOT}/Product\n\nbinary_device=${device_build_dir}/${binary_name}\nbinary_simulator=${simulator_build_dir}/${binary_name}\n\n#代码混淆\n#/bin/sh $PROJECT_DIR/obfuscationshell.sh\n\n# 删除旧的文件\nrm -f \"${output_dir}/${framework_name}\"\n\n# 编译真机和模拟器的Release版本\nxcodebuild -configuration \"Release\" -project \"${PROJECT_NAME}.xcodeproj\" -scheme \"${PROJECT_NAME}\" -sdk \"iphoneos\" CONFIGURATION_BUILD_DIR=\"${device_build_dir}\" GCC_PREPROCESSOR_DEFINITIONS=\"BUILD_UNIVERSAL_LIB=1\" clean build\nxcodebuild -configuration \"Release\" ARCHS=\"i386 x86_64\" ONLY_ACTIVE_ARCH=NO VALID_ARCHS=\"i386 x86_64\" -project \"${PROJECT_NAME}.xcodeproj\" -scheme \"${PROJECT_NAME}\" -sdk \"iphonesimulator\" CONFIGURATION_BUILD_DIR=\"${simulator_build_dir}\" GCC_PREPROCESSOR_DEFINITIONS=\"BUILD_UNIVERSAL_LIB=1\" clean build\n\nmkdir -p \"${output_dir}\"\n\n# 合并通用库\nlipo -create \"${binary_device}\" \"${binary_simulator}\" -output \"${binary_device}\"\n\n# 移动到输出目录\nmv ${device_build_dir}/${framework_name} ${output_dir}/${framework_name}\n\n# 清除生成目录\nrm -r \"${SRCROOT}/build\"\n\nopen \"${output_dir}\"\n";
+			shellScript = "# workaround for bitcode generation problem with Xcode 7.3\nunset TOOLCHAINS\n\n# 生成通用库\n\nframework_name=${PROJECT_NAME}.framework\nbinary_name=${framework_name}/${PROJECT_NAME}\n\n# 生成目录\ndevice_build_dir=${SRCROOT}/build/Release-iphoneos\nsimulator_build_dir=${SRCROOT}/build/Release-iphonesimulator\n\n# 输出目录\noutput_dir=${SRCROOT}/Product\n\nbinary_device=${device_build_dir}/${binary_name}\nbinary_simulator=${simulator_build_dir}/${binary_name}\n\n#代码混淆\n#/bin/sh $PROJECT_DIR/obfuscationshell.sh\n\n# 删除旧的文件\nrm -rf \"${output_dir}\"\n\n# 编译真机和模拟器的Release版本\nxcodebuild -configuration \"Release\" -project \"${PROJECT_NAME}.xcodeproj\" -scheme \"${PROJECT_NAME}\" -sdk \"iphoneos\" CONFIGURATION_BUILD_DIR=\"${device_build_dir}\" GCC_PREPROCESSOR_DEFINITIONS=\"BUILD_UNIVERSAL_LIB=1\" clean build\nxcodebuild -configuration \"Release\" ARCHS=\"i386 x86_64\" ONLY_ACTIVE_ARCH=NO VALID_ARCHS=\"i386 x86_64\" -project \"${PROJECT_NAME}.xcodeproj\" -scheme \"${PROJECT_NAME}\" -sdk \"iphonesimulator\" CONFIGURATION_BUILD_DIR=\"${simulator_build_dir}\" GCC_PREPROCESSOR_DEFINITIONS=\"BUILD_UNIVERSAL_LIB=1\" clean build\n\nmkdir -p \"${output_dir}\"\n\n# 合并通用库\nlipo -create \"${binary_device}\" \"${binary_simulator}\" -output \"${binary_device}\"\n\n# 移动到输出目录\nmv ${device_build_dir}/${framework_name} ${output_dir}\n\n# 清除生成目录\nrm -r \"${SRCROOT}/build\"\n\nopen \"${output_dir}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -517,6 +529,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = wyt.vaint.YTBaseFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -552,6 +565,7 @@
 				82CDF1511D7A76B8007263FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82EC93B81D69656800E549BF /* Build configuration list for PBXProject "YTBaseFoundation" */ = {
 			isa = XCConfigurationList;
