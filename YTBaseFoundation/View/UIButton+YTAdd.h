@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, ButtonImgStyle) {
+    ButtonImgStyleTop, // image在上，label在下
+    ButtonImgStyleLeft, // image在左，label在右
+    ButtonImgStyleBottom, // image在下，label在上
+    ButtonImgStyleRight // image在右，label在左
+};
+
 @interface UIButton (YTAdd)
 
 +(UIButton*)buttonWithFrame:(CGRect)frame
@@ -27,5 +34,8 @@
                       color:(UIColor*)color
                   normalImg:(UIImage*)normalImg
                  pressedImg:(UIImage*)pressedImg;
+
+- (void)layoutButtonWithStyle:(ButtonImgStyle)style
+                imgTitleSpace:(CGFloat)space;
 
 @end
