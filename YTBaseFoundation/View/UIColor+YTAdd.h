@@ -14,7 +14,7 @@
 #define YTShortColor(c)     [UIColor colorWithR:c G:c B:c A:1]
 #define YTShortColorA(c,a)  [UIColor colorWithR:c G:c B:c A:a]
 
-/** hex:#ABABAB */
+/** hex:ABABAB */
 #define YTHexColor(hex)     [UIColor colorWithHex:hex]
 
 
@@ -22,6 +22,6 @@
 
 +(UIColor*)colorWithR:(CGFloat)r G:(CGFloat)g B:(CGFloat)b A:(CGFloat)a;
 
-+(UIColor*)colorWithHex:(NSString*)hex;
++(UIColor*)colorWithHex:(uint32_t)hex;
 
 @end

@@ -8,12 +8,11 @@
 #import "YTAesUtil.h"
 #import <CommonCrypto/CommonCryptor.h>
 #import "YTSystemUtil.h"
-#import "GTMBase64.h"
 #import "NSString+YTAdd.h"
 
 
 #define Aes_Key_Surfix @"=sl-dje%$@^83"
-#define Aes_IV @"0123456789012345"
+//#define Aes_IV @"0123456789012345"
 
 @implementation YTAesUtil
 
@@ -50,12 +49,14 @@
 {
     NSData *encData = [self encryptData:[srcStr dataUsingEncoding:NSUTF8StringEncoding] withKey:key];
     
-    return [GTMBase64 stringByEncodingData:encData];
+    return [encData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+//    return [GTMBase64 stringByEncodingData:encData];
 }
 
 +(NSString *)decryptString:(NSString *)encStr withKey:(NSString *)key
 {
-    NSData *encData = [GTMBase64 decodeString:encStr];
+    NSData *encData = [[NSData alloc] initWithBase64EncodedString:encStr options:NSDataBase64DecodingIgnoreUnknownCharacters];
+//    NSData *encData = [GTMBase64 decodeString:encStr];
     NSData *srcData = [self decryptData:encData withKey:key];
     
     return [[NSString alloc] initWithData:srcData encoding:NSUTF8StringEncoding];
@@ -77,7 +78,8 @@
     CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt, kCCAlgorithmAES128,
                                           kCCOptionPKCS7Padding,
                                           key.UTF8String, kCCKeySizeAES256,
-                                          Aes_IV.UTF8String,
+//                                          Aes_IV.UTF8String,
+                                          NULL,
                                           [srcData bytes], dataLength,
                                           buffer, bufferSize,
                                           &numBytesEncrypted);
@@ -101,7 +103,8 @@
     CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt, kCCAlgorithmAES128,
                                           kCCOptionPKCS7Padding,
                                           key.UTF8String, kCCKeySizeAES256,
-                                          Aes_IV.UTF8String,
+//                                          Aes_IV.UTF8String,
+                                          NULL,
                                           [encData bytes], dataLength,
                                           buffer, bufferSize,
                                           &numBytesDecrypted);
