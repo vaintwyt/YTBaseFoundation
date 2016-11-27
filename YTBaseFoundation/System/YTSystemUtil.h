@@ -110,7 +110,7 @@ typedef enum {
 
 + (BOOL)isSystemVerOver:(CGFloat)verValue;
 
-+ (NSString*)UDID;
++ (NSString*)UUID;
 
 + (NSString *)platformString;
 
@@ -141,6 +141,8 @@ typedef enum {
 + (BOOL)isAppPhotoLibraryAccessAuthorized;
 
 + (BOOL)isJailBroken;// 越狱
+
++ (BOOL)isSimulator;
 
 + (NSString *)macAddress;
 

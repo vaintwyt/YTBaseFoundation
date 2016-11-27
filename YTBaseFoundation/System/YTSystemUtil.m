@@ -15,10 +15,11 @@
 #import <net/if_dl.h>
 #import <netinet/in.h>
 #import <arpa/inet.h>
-#import "OpenUDID.h"
 #import "YTViewUtil.h"
+#import "YTKeyChainUtil.h"
 
 
+#define YTKey_UUID @"yt_udid"
 #define IP_ADDR_IPv4 @"ipv4"
 #define IP_ADDR_IPv6 @"ipv6"
 
@@ -48,9 +49,19 @@
     return [YTSystemUtil systemVer] >= versionValue;
 }
 
-+(NSString*)UDID
++(NSString*)UUID
 {
-    return [OpenUDID value];
+    static NSString *uuid = nil;
+    if(uuid)
+    {
+        uuid = [YTKeyChainUtil stringForKey:YTKey_UUID];
+        if(uuid.length == 0)// 生成UDID
+        {
+            uuid = [[NSUUID UUID] UUIDString];
+            [YTKeyChainUtil setString:uuid forKey:YTKey_UUID];
+        }
+    }
+    return uuid;
 }
 
 + (CGFloat)systemVer
@@ -276,6 +287,14 @@
     NSURL* url = [NSURL URLWithString:@"cydia://package/com.example.package"];
     isJailBroken = [[UIApplication sharedApplication] canOpenURL:url];
     return isJailBroken;
+}
+
++ (BOOL)isSimulator {
+#if TARGET_OS_SIMULATOR
+    return YES;
+#else
+    return NO;
+#endif
 }
 
 +(NSString *)macAddress

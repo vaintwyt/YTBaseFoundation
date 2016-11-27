@@ -14,6 +14,8 @@ FOUNDATION_EXPORT double YTBaseFoundationVersionNumber;
 //! Project version string for YTBaseFoundation.
 FOUNDATION_EXPORT const unsigned char YTBaseFoundationVersionString[];
 
+#if __has_include(<YTBaseFoundation/YTBaseFoundation.h>)
+
 #import <YTBaseFoundation/YTBaseFoundationDefine.h>
 #import <YTBaseFoundation/YTNetwork.h>
 #import <YTBaseFoundation/YTView.h>
@@ -22,10 +24,19 @@ FOUNDATION_EXPORT const unsigned char YTBaseFoundationVersionString[];
 #import <YTBaseFoundation/YTFileUtil.h>
 #import <YTBaseFoundation/YTKeyChainUtil.h>
 #import <YTBaseFoundation/YTAesUtil.h>
-#import <YTBaseFoundation/GTMBase64.h>
-#import <YTBaseFoundation/GTMDefines.h>
 #import <YTBaseFoundation/YTSystemUtil.h>
-#import <YTBaseFoundation/OpenUDID.h>
 
+#else
 
+#import "YTBaseFoundationDefine.h"
+#import "YTNetwork.h"
+#import "YTView.h"
+#import "YTGCDUtil.h"
+#import "YTModel.h"
+#import "YTFileUtil.h"
+#import "YTKeyChainUtil.h"
+#import "YTAesUtil.h"
+#import "YTSystemUtil.h"
+
+#endif
 

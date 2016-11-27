@@ -20,7 +20,7 @@
 {
     if(srcStr == nil) return nil;
     
-    NSString *key = [NSString stringWithFormat:@"%@%@",Aes_Key_Surfix,[YTSystemUtil UDID]];
+    NSString *key = [NSString stringWithFormat:@"%@%@",Aes_Key_Surfix,[YTSystemUtil UUID]];
     return [self encryptString:srcStr withKey:[key MD5]];
 }
 
@@ -28,19 +28,19 @@
 {
     if(encStr == nil) return nil;
     
-    NSString *key = [NSString stringWithFormat:@"%@%@",Aes_Key_Surfix,[YTSystemUtil UDID]];
+    NSString *key = [NSString stringWithFormat:@"%@%@",Aes_Key_Surfix,[YTSystemUtil UUID]];
     return [self decryptString:encStr withKey:[key MD5]];
 }
 
 +(NSData *)encryptData:(NSData *)srcData
 {
-    NSString *key = [NSString stringWithFormat:@"%@%@",Aes_Key_Surfix,[YTSystemUtil UDID]];
+    NSString *key = [NSString stringWithFormat:@"%@%@",Aes_Key_Surfix,[YTSystemUtil UUID]];
     return [self encryptData:srcData withKey:[key MD5]];
 }
 
 +(NSData *)decryptData:(NSData *)encData
 {
-    NSString *key = [NSString stringWithFormat:@"%@%@",Aes_Key_Surfix,[YTSystemUtil UDID]];
+    NSString *key = [NSString stringWithFormat:@"%@%@",Aes_Key_Surfix,[YTSystemUtil UUID]];
     return [self decryptData:encData withKey:[key MD5]];
 }
 

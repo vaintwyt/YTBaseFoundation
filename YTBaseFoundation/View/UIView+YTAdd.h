@@ -11,26 +11,26 @@
 @interface UIView (Frame)
 
 // ---- 基本属性
-@property CGPoint origin;
-@property CGSize size;
-@property CGFloat x;
-@property CGFloat y;
+@property (nonatomic) CGPoint origin;
+@property (nonatomic) CGSize size;
+@property (nonatomic) CGFloat x;
+@property (nonatomic) CGFloat y;
 
-@property (readonly) CGPoint bottomLeft;
-@property (readonly) CGPoint bottomRight;
-@property (readonly) CGPoint topRight;
+@property (nonatomic, readonly) CGPoint bottomLeft;
+@property (nonatomic, readonly) CGPoint bottomRight;
+@property (nonatomic, readonly) CGPoint topRight;
 
-@property CGFloat height;
-@property CGFloat width;
+@property (nonatomic) CGFloat height;
+@property (nonatomic) CGFloat width;
 
-@property CGFloat top;
-@property CGFloat left;
+@property (nonatomic) CGFloat top;
+@property (nonatomic) CGFloat left;
 
-@property CGFloat bottom;
-@property CGFloat right;
+@property (nonatomic) CGFloat bottom;
+@property (nonatomic) CGFloat right;
 
-@property CGFloat centerX;
-@property CGFloat centerY;
+@property (nonatomic) CGFloat centerX;
+@property (nonatomic) CGFloat centerY;
 
 
 // ---- 布局
