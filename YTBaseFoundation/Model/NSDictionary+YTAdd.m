@@ -7,6 +7,7 @@
 //
 
 #import "NSDictionary+YTAdd.h"
+#import "NSString+YTAdd.h"
 
 @implementation NSDictionary (YTAdd)
 
@@ -21,7 +22,7 @@
             continue;
         }
         
-        NSString *pair = [NSString stringWithFormat: @"%@=%@",key, value];
+        NSString *pair = [NSString stringWithFormat: @"%@=%@",key, [value urlEncode]];
         [pairs addObject:pair];
     }
     

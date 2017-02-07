@@ -22,13 +22,19 @@
     if(![YTNetworkUtil checkUrl:path])
         return nil;
     
-    NSString *paramStr = [params paramString];
+    NSString *paramStr = nil;
+    if(params)
+    {
+        paramStr = [params paramString];
+    }
     
-    NSMutableURLRequest *request = nil;
+    NSMutableURLRequest *request = [NSMutableURLRequest new];
     if([method isEqualToString:@"GET"])
     {
-        path = [path stringByAppendingFormat:@"%@?%@",path,paramStr];
-        path = [path urlEncode];
+        if(paramStr)
+        {
+            path = [NSString stringWithFormat:@"%@?%@",path,paramStr];
+        }
     }
     else
     {
