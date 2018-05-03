@@ -1,8 +1,8 @@
 //
 //  YTAesUtil.m
 //
-//  Created by vaint on 15-3-31.
-//  Copyright 2015 vaint. All rights reserved.
+//  Created by YT on 15-3-31.
+//  Copyright 2015 YT. All rights reserved.
 //
 
 #import "YTAesUtil.h"

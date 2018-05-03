@@ -2,8 +2,8 @@
 //  YTNetworkDefine.h
 //  YTBaseFoundation
 //
-//  Created by vaint on 16/8/28.
-//  Copyright © 2016年 vaint. All rights reserved.
+//  Created by YT on 16/8/28.
+//  Copyright © 2016年 YT. All rights reserved.
 //
 
 #ifndef YTNetworkDefine_h

@@ -27,6 +27,12 @@
 		821447741D6C0DCE00091A64 /* YTNetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 821447721D6C0DCE00091A64 /* YTNetworkUtil.m */; };
 		821447771D6C3F8700091A64 /* YTNetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 821447751D6C3F8700091A64 /* YTNetworkManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		821447781D6C3F8700091A64 /* YTNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 821447761D6C3F8700091A64 /* YTNetworkManager.m */; };
+		82DED28C209AFFBE001F0462 /* YTTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 82DED28A209AFFBE001F0462 /* YTTimer.h */; };
+		82DED28D209AFFBE001F0462 /* YTTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DED28B209AFFBE001F0462 /* YTTimer.m */; };
+		82DED290209B007F001F0462 /* YTWeakProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 82DED28E209B007F001F0462 /* YTWeakProxy.h */; };
+		82DED291209B007F001F0462 /* YTWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DED28F209B007F001F0462 /* YTWeakProxy.m */; };
+		82DED294209B015D001F0462 /* YTTimeoutTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 82DED292209B015D001F0462 /* YTTimeoutTimer.h */; };
+		82DED295209B015D001F0462 /* YTTimeoutTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DED293209B015D001F0462 /* YTTimeoutTimer.m */; };
 		82E12AB31DEA98E300A5F603 /* UIScrollView+YTAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 82E12AB11DEA98E300A5F603 /* UIScrollView+YTAdd.h */; };
 		82E12AB41DEA98E300A5F603 /* UIScrollView+YTAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E12AB21DEA98E300A5F603 /* UIScrollView+YTAdd.m */; };
 		82E12AB71DEA9C1700A5F603 /* UITableView+YTAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 82E12AB51DEA9C1700A5F603 /* UITableView+YTAdd.h */; };
@@ -78,6 +84,12 @@
 		821447721D6C0DCE00091A64 /* YTNetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNetworkUtil.m; sourceTree = "<group>"; };
 		821447751D6C3F8700091A64 /* YTNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNetworkManager.h; sourceTree = "<group>"; };
 		821447761D6C3F8700091A64 /* YTNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNetworkManager.m; sourceTree = "<group>"; };
+		82DED28A209AFFBE001F0462 /* YTTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTTimer.h; sourceTree = "<group>"; };
+		82DED28B209AFFBE001F0462 /* YTTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTTimer.m; sourceTree = "<group>"; };
+		82DED28E209B007F001F0462 /* YTWeakProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTWeakProxy.h; sourceTree = "<group>"; };
+		82DED28F209B007F001F0462 /* YTWeakProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTWeakProxy.m; sourceTree = "<group>"; };
+		82DED292209B015D001F0462 /* YTTimeoutTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTTimeoutTimer.h; sourceTree = "<group>"; };
+		82DED293209B015D001F0462 /* YTTimeoutTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTTimeoutTimer.m; sourceTree = "<group>"; };
 		82E12AB11DEA98E300A5F603 /* UIScrollView+YTAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YTAdd.h"; sourceTree = "<group>"; };
 		82E12AB21DEA98E300A5F603 /* UIScrollView+YTAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YTAdd.m"; sourceTree = "<group>"; };
 		82E12AB51DEA9C1700A5F603 /* UITableView+YTAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+YTAdd.h"; sourceTree = "<group>"; };
@@ -224,6 +236,12 @@
 				82EC94211D69C03800E549BF /* NSString+YTAdd.h */,
 				82EC94221D69C03800E549BF /* NSString+YTAdd.m */,
 				82EC94521D7BC3C800E549BF /* YTModel.h */,
+				82DED28A209AFFBE001F0462 /* YTTimer.h */,
+				82DED28B209AFFBE001F0462 /* YTTimer.m */,
+				82DED28E209B007F001F0462 /* YTWeakProxy.h */,
+				82DED28F209B007F001F0462 /* YTWeakProxy.m */,
+				82DED292209B015D001F0462 /* YTTimeoutTimer.h */,
+				82DED293209B015D001F0462 /* YTTimeoutTimer.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82EC93F11D698A5B00E549BF /* UIColor+YTAdd.h in Headers */,
+				82DED290209B007F001F0462 /* YTWeakProxy.h in Headers */,
 				82EC93D11D696A3100E549BF /* UIButton+YTAdd.h in Headers */,
 				82EC94281D69C03800E549BF /* NSDate+YTAdd.h in Headers */,
 				82E12AB31DEA98E300A5F603 /* UIScrollView+YTAdd.h in Headers */,
@@ -281,6 +300,8 @@
 				82EC93F91D698E3600E549BF /* YTViewUtil.h in Headers */,
 				82EC94351D69C0DB00E549BF /* YTGCDUtil.h in Headers */,
 				82EC942A1D69C03800E549BF /* NSDictionary+YTAdd.h in Headers */,
+				82DED28C209AFFBE001F0462 /* YTTimer.h in Headers */,
+				82DED294209B015D001F0462 /* YTTimeoutTimer.h in Headers */,
 				82EC94021D69B12900E549BF /* YTSystemUtil.h in Headers */,
 				82EC93D91D696B4400E549BF /* UILabel+YTAdd.h in Headers */,
 				82EC94301D69C03800E549BF /* YTKeyChainUtil.h in Headers */,
@@ -330,7 +351,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = vaint;
+				ORGANIZATIONNAME = YT;
 				TargetAttributes = {
 					82CDF14F1D7A76B8007263FE = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -389,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DED295209B015D001F0462 /* YTTimeoutTimer.m in Sources */,
 				8214476C1D6BFD8600091A64 /* NSMutableURLRequest+YTAdd.m in Sources */,
 				82EC93FA1D698E3600E549BF /* YTViewUtil.m in Sources */,
 				82EC94111D69BA7D00E549BF /* YTAesUtil.m in Sources */,
@@ -407,7 +429,9 @@
 				82E12ABC1DEA9EA700A5F603 /* CALayer+YTAdd.m in Sources */,
 				82EC94311D69C03800E549BF /* YTKeyChainUtil.m in Sources */,
 				82EC943F1D6B1BA600E549BF /* YTNetworkEngine.m in Sources */,
+				82DED28D209AFFBE001F0462 /* YTTimer.m in Sources */,
 				82EC93CD1D69667000E549BF /* UIView+YTAdd.m in Sources */,
+				82DED291209B007F001F0462 /* YTWeakProxy.m in Sources */,
 				82EC942D1D69C03800E549BF /* NSString+YTAdd.m in Sources */,
 				82EC94361D69C0DB00E549BF /* YTGCDUtil.m in Sources */,
 			);

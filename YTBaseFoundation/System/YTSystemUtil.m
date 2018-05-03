@@ -2,8 +2,8 @@
 //  YTSystemUtil.m
 //  YTBaseFoundation
 //
-//  Created by vaint on 16/8/21.
-//  Copyright © 2016年 vaint. All rights reserved.
+//  Created by YT on 16/8/21.
+//  Copyright © 2016年 YT. All rights reserved.
 //
 
 #import "YTSystemUtil.h"

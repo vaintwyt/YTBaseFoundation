@@ -2,8 +2,8 @@
 //  YTBaseFoundationDefine.h
 //  YTBaseFoundation
 //
-//  Created by vaint on 16/8/28.
-//  Copyright © 2016年 vaint. All rights reserved.
+//  Created by YT on 16/8/28.
+//  Copyright © 2016年 YT. All rights reserved.
 //
 
 #ifndef YTBaseFoundationDefine_h
@@ -19,8 +19,16 @@
 
 
 // Custom
-#define YTWeakSelf(_weakSelf)                 __weak typeof(self) _weakSelf = self
-#define YTStrongSelf(_strongSelf,_weakSelf)   __typeof(&*_weakSelf) _strongSelf = _weakSelf
+#define YTWeakSelf                 __weak typeof(self) wSelf = self;
+#define YTStrongSelf   __typeof(&*wSelf) sSelf = wSelf;
+#define YTStrongSelfNotNil  \
+YTStrongSelf \
+if(!sSelf) return;
+
+#define YTStrongSelfNotNil_R(_retVal_)   \
+YTStrongSelf \
+if(!sSelf) return _retVal_;
+
 
 #define YTDefine_Extern_String(key) extern NSString* const k##key
 #define YTInit_Extern_String(key, value) NSString* const k##key=@""#value
